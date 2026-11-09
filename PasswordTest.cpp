@@ -41,3 +41,10 @@ TEST(PasswordTest, new_char_password) //A unit test, first arg is name of suite 
 	int actual = my_password.count_leading_characters("\n");
 	ASSERT_EQ(1, actual); //1st arg is expected outcome, 2nd arg is function result
 }
+
+TEST(PasswordTest, double_lead_char_password) //A unit test, first arg is name of suite to test, every class made has test associatedd with same name, 2nd arg has the name what it is testing
+{
+	Password my_password; 
+	int actual = my_password.count_leading_characters("NNNNOOOO");
+	ASSERT_EQ(4, actual); //1st arg is expected outcome, 2nd arg is function result
+}
