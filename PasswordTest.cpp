@@ -27,3 +27,10 @@ TEST(PasswordTest, long_repeating_leading_password) //A unit test, first arg is 
 	int actual = my_password.count_leading_characters("ZZZZZZZZZZhogyfyfogp");
 	ASSERT_EQ(10, actual); //1st arg is expected outcome, 2nd arg is function result
 }
+
+TEST(PasswordTest, no_lead_password) //A unit test, first arg is name of suite to test, every class made has test associatedd with same name, 2nd arg has the name what it is testing
+{
+	Password my_password; 
+	int actual = my_password.count_leading_characters("");
+	ASSERT_EQ(0, actual); //1st arg is expected outcome, 2nd arg is function result
+}
