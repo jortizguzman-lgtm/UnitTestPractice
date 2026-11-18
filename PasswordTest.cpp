@@ -90,3 +90,44 @@ TEST(PasswordTEst, mix_case)
         bool actual = my_password.has_mixed_case("efggoA");
         ASSERT_EQ(true, actual);
 }
+
+TEST(PasswordTEst, mid_upper)
+{
+        Password my_password;
+        bool actual = my_password.has_mixed_case("efgoAwfge");
+        ASSERT_EQ(true, actual);
+}
+TEST(PasswordTEst, mid_lower)
+{
+        Password my_password;
+        bool actual = my_password.has_mixed_case("AFHOvWOVS");
+        ASSERT_EQ(true, actual);
+}
+
+TEST(PasswordTEst, empty_case)
+{
+        Password my_password;
+        bool actual = my_password.has_mixed_case("");
+        ASSERT_EQ(false, actual);
+}
+
+TEST(PasswordTEst, non_alphabet)
+{
+        Password my_password;
+        bool actual = my_password.has_mixed_case("208");
+        ASSERT_EQ(false, actual);
+}
+
+TEST(PasswordTEst, num_upper_char)
+{
+        Password my_password;
+        bool actual = my_password.has_mixed_case("208A");
+        ASSERT_EQ(false, actual);
+}
+
+TEST(PasswordTEst, num_lower_char)
+{
+        Password my_password;
+        bool actual = my_password.has_mixed_case("208a");
+        ASSERT_EQ(false, actual);
+}
